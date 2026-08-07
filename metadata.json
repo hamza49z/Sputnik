@@ -1,0 +1,6 @@
+{
+  "name": "Sputnik",
+  "description": "Recurring shared-expense pool platform on Arc Testnet",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

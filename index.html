@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var nativeFetch = window.fetch;
+          var fetchStorage = nativeFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return fetchStorage;
+            },
+            set: function(val) {
+              fetchStorage = val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('Fetch property definition patch skipped:', e);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sputnik</title>
+    <meta name="description" content="Recurring shared-expense pool platform on Arc Testnet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
